@@ -8,10 +8,7 @@ describe "User deletes existing job" do
     visit company_job_path(company, job)
 
     click_on "Delete"
-    # within(".company_#{company.id}_job_#{job.id}") do
-    #   click_link "Delete"
-    # end
-
+    
     expect(page).to have_content("Q&A at ESPN was successfully deleted!")
   end
 end
