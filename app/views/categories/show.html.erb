@@ -1,2 +1,6 @@
 <h3>Category Title: <%= @category.title %></h3>
+<%= link_to "Delete" category_path(@category), method: "delete" %>
+<%= link_to "Edit", edit_category_path(@category) %>
+<br>
+<br>
 <%= link_to "All Categories", categories_path %>
