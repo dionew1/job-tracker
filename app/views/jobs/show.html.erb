@@ -16,4 +16,5 @@
 <br>
 <br>
 <h3>Comments</h3>
-<%= render partial: 'job/comments', collection: @job.comments.reverse %>
+<%= render partial: 'jobs/comment', collection: @job.comments.reverse %>
+<%= render partial: 'comments/form' %>
