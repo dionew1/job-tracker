@@ -1,4 +1,5 @@
 <h3> Available Categories </h3>
+<p><%= link_to "Add Category", new_category_path(@categories) %></p>
 <% @categories.each do |category| %>
   <p><%= category.title %><p>
   <%= link_to "Delete", category_path(@categories) %>
