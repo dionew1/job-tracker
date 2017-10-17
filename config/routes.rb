@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: "homes#show"
   resources :categories
   resources :companies do
     resources :jobs

@@ -7,12 +7,12 @@ class JobsController < ApplicationController
   end
 
   def new
-    @category = Category.all
+    @categories = Category.all
     @job = Job.new()
   end
 
   def create
-    @category = Category.all
+    @categories = Category.all
     @job = @company.jobs.new(job_params)
     if @job.save
       flash[:success] = "You created #{@job.title} at #{@company.name}"
