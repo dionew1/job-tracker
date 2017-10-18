@@ -1,4 +1,4 @@
-<h3>All Jobs for <strong><%= @company.name %></strong></h3>
+<h3>All Jobs for <%= @company.name %></h3>
 
 <% @jobs.each do |job| %>
   <ul>
@@ -7,3 +7,7 @@
     <%= job.company.name %>
   </ul>
 <% end %>
+
+<h3>Contacts for <%= @company.name %></h3>
+<%= render partial: 'jobs/contact', collection: @company.contacts %>
+<%= render partial: 'contacts/form' %>

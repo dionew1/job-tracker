@@ -5,6 +5,7 @@ class JobsController < ApplicationController
 
   def index
     @jobs = @company.jobs
+    @contacts = Contact.new()
   end
 
   def new
