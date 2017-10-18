@@ -1,0 +1,45 @@
+body {
+  background: {
+  image: url("patrick-perkins-350622.jpg");
+  size: cover;
+  attachment: fixed;
+  position: center;
+  }
+
+  nav {
+    display: flex;
+    background: rgba(112, 112, 109, .7);
+    justify-content: space-around;
+    padding: 12px;
+  }
+
+  nav a {
+    color: rgb(255, 255, 244);
+  }
+
+  a {
+    text-decoration: none;
+    color: rgb(25, 25, 25)
+  }
+
+  h2 {
+    text-align: center;
+    text-decoration-style: wavy;
+    font-weight: 900;
+  }
+
+  ul {
+    padding: 10px;
+    background: rgba(239, 250, 255, .5)
+  }
+
+  p {
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .button {
+    display: inline;
+  }
+
+}
