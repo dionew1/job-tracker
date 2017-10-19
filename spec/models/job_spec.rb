@@ -48,8 +48,11 @@ describe Job do
     it "can sort by city" do
       company = create(:company)
       category = create(:category)
-      jobs = create_list(:job, 3, company: company, category: category)
-      expect(Job.sort_location.first.city).to eq(jobs[0].city)
+      job = Job.create(title: "Software", level_of_interest: 70, description: "Wahooo",
+                       city: "Denver", category: category, company: company)
+      job = Job.create(title: "Software", level_of_interest: 70, description: "Wahooo",
+                       city: "Boulder", category: category, company: company)
+      expect(Job.sort_location.first.city).to eq("Boulder")
     end
     it "can sort by interest" do
       company = create(:company)
