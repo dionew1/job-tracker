@@ -5,7 +5,7 @@ describe "User deletes existing category" do
     category = create(:category)
     visit categories_path
 
-    click_link "Delete"
+    click_on "Delete"
 
     expect(page).to have_content("#{category.title} was successfully deleted!")
   end

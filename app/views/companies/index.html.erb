@@ -1,11 +1,13 @@
 <h2>All Companies</h2>
-<p>Add a Company: <%= link_to "Add", new_company_path %>
-<ul>
+<h4>Add a Company: <%= link_to "Add", new_company_path %></h4>
+<ul class="container">
   <% @companies.each do |company| %>
-  <p>
+  <div>
     <%= link_to company.name, company_path(company), method: "get" %>
-    <%= button_to "Edit", edit_company_path(company), method: "get" %>
-    <%= button_to "Delete", company_path(company), method: "delete" %>
-  </p>
+    <div class="button">
+      <%= button_to "Edit", edit_company_path(company), method: "get" %>
+      <%= button_to "Delete", company_path(company), method: "delete" %>
+    </div>
+  </div>
   <% end %>
 </ul>

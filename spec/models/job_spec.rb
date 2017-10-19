@@ -80,5 +80,16 @@ describe Job do
                        city: "Boulder", category: category, company: company)
       expect(Job.group_by_interest[70]).to eq(2)
     end
+    it "can group by location" do
+      company = create(:company)
+      category = create(:category)
+      job = Job.create(title: "Software", level_of_interest: 70, description: "Wahooo",
+                       city: "Denver", category: category, company: company)
+      job = Job.create(title: "Developer", level_of_interest: 70, description: "Wahooo",
+                       city: "Denver", category: category, company: company)
+      job = Job.create(title: "Quality", level_of_interest: 60, description: "Wahooo",
+                       city: "Boulder", category: category, company: company)
+      expect(Job.group_by_location["Denver"]).to eq(2)
+    end
   end
 end

@@ -28,18 +28,82 @@ body {
     font-weight: 900;
   }
 
+  h3 {
+    color: rgb(7, 79, 147);
+    background: rgba(239, 250, 255, .5);
+    text-align: center;
+  }
+
+  h4 {
+    text-align: center;
+  }
+
+  div,
+  form,
+  section,
+  ul {
+    background: rgba(239, 250, 255, .7);
+    padding: 20px;
+  }
+
   ul {
     padding: 10px;
-    background: rgba(239, 250, 255, .5)
   }
 
   p {
     text-align: center;
-    font-weight: 700;
+  }
+
+  div {
+    display: inline-block;
+  }
+
+  div + div {
+    margin: 20px;
+  }
+
+  div:first-child{
+    margin: 20px;
   }
 
   .button {
-    display: inline;
+    background: none;
+  }
+
+  .button form {
+     display: inline-block;
+     background: none;
+  }
+
+  .container {
+    display: inline-block;
+    padding: 40px;
+  }
+
+  .contact,
+  #new_contact label {
+    padding-left: 20px;
+  }
+
+  .category {
+    text-align: center;
+    background: none;
+  }
+
+  #job_button form{
+    background: none;
+    display: inline-block;
+  }
+
+  #job_button {
+    background: none;
+    text-align: center;
+    width: 96%;
+  }
+
+  #comment {
+    text-align: center;
+    display: block;
   }
 
 }

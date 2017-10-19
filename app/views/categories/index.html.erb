@@ -1,7 +1,13 @@
 <h3> Available Categories </h3>
-<p><%= link_to "Add Category", new_category_path(@categories) %></p>
-<% @categories.each do |category| %>
-  <p><%= link_to "#{category.title}", category_path(category) %><p>
-    <%= button_to "Delete", category_path(category), method: "delete" %>
-    <%= button_to "Edit", edit_category_path(category) %>
-<% end %>
+<h4><%= link_to "Add Category", new_category_path(@categories) %></h4>
+<ul class="container">
+  <% @categories.each do |category| %>
+  <div>
+    <%= link_to "#{category.title}", category_path(category) %>
+    <div class="button">
+      <%= button_to "Delete", category_path(category), method: "delete" %>
+      <%= button_to "Edit", edit_category_path(category), method: "get" %>
+    </div>
+  </div>
+  <% end %>
+</ul>
