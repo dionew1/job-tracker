@@ -1,5 +1,18 @@
 <h2> Welcome to Job Tracker <h2>
 <h4>Number of Jobs per Interest Level<h4>
-<% @jobs.group_by_interest.each do |interest, count| %>
-  <li><%= interest %> has <%= count %> job(s).</li>
-<% end %>
+<div>
+  <% @jobs.group_by_interest.each do |interest, count| %>
+    <li><%= interest %> has <%= count %> job(s).</li>
+  <% end %>
+</div>
+<div>
+  <h4>Number of Jobs per Location</h4>
+  <% @jobs.group_by_location.each do |location, count| %>
+    <li>
+      <%= location %> has <%= count %>
+      <% city = Hash.new %>
+      <% city["location"] = location  %>
+      <%= link_to "job(s)", (jobs_path(@job).concat("?" + city.to_query)) %></li>
+    </li>
+  <% end %>
+</div>

@@ -55,6 +55,8 @@ class JobsController < ApplicationController
       @jobs = Job.sort_interest
     elsif params[:location]
       @jobs = Job.find_by_city(params[:location])
+    else
+      @jobs = Job.all
     end
     render :index2
   end

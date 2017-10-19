@@ -19,4 +19,8 @@ class Job < ApplicationRecord
   def self.group_by_interest
     group(:level_of_interest).count
   end
+
+  def self.group_by_location
+    group(:city).count
+  end
 end
