@@ -48,14 +48,13 @@ class JobsController < ApplicationController
     redirect_to company_jobs_path(@company)
   end
 
-
   def jobs
     if params[:sort] == "location"
-      @jobs = Job.order(:city)
+      @jobs = Job.sort_location
     elsif params[:sort] == "interest"
-      @jobs = Job.order(:level_of_interest)
+      @jobs = Job.sort_interest
     elsif params[:location]
-      @jobs = Job.where(city: params[:location])
+      @jobs = Job.find_by_city(params[:location])
     end
     render :index2
   end

@@ -3,4 +3,16 @@ class Job < ApplicationRecord
   belongs_to :company
   belongs_to :category
   has_many   :comments, dependent: :destroy
+
+  def self.sort_location
+    order(:city)
+  end
+
+  def self.sort_interest
+    order(:level_of_interest)
+  end
+
+  def self.find_by_city(location)
+    where(city: location)
+  end
 end
