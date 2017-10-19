@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "user can create a contact" do
   scenario "a user can create a contact for a specific company" do
-    company = Company.create!(name: "ESPN")
+    company = create(:company)
 
     visit company_jobs_path(company)
 

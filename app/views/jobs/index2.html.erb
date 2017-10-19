@@ -1,0 +1,10 @@
+<h3>Jobs</h3>
+
+<% @jobs.each do |job| %>
+  <ul>
+    <%= link_to job.title, jobs_path %>
+    at
+    <%= job.company.name %>
+    <%= job.city%>
+  </ul>
+<% end %>

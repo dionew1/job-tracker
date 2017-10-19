@@ -1,11 +1,12 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
-  before_action :set_company
+  before_action :set_company, except: :jobs
   before_action :set_category, only: [:new, :create, :edit, :update]
 
   def index
     @jobs = @company.jobs
     @contacts = Contact.new()
+    render :index1
   end
 
   def new
@@ -45,6 +46,19 @@ class JobsController < ApplicationController
 
     flash[:success] = "#{@job.title} at #{@job.company.name} was successfully deleted!"
     redirect_to company_jobs_path(@company)
+  end
+
+  def jobs
+    if params[:sort] == "location"
+      @jobs = Job.sort_location
+    elsif params[:sort] == "interest"
+      @jobs = Job.sort_interest
+    elsif params[:location]
+      @jobs = Job.find_by_city(params[:location])
+    else
+      @jobs = Job.all
+    end
+    render :index2
   end
 
   private

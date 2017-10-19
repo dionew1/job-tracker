@@ -21,7 +21,7 @@ describe Contact do
 
     context "valid attributes" do
       it "is valid with all attributes" do
-        company = Company.create!(name: "Woot!")
+        company = create(:company)
         contact = company.contacts.create!(name: "Ken", position: "HR", email: "hrep@woot.com")
         expect(contact).to be_valid
       end
@@ -29,7 +29,7 @@ describe Contact do
   end
   describe "relationships" do
     it "belongs_to a company" do
-      company = Company.create!(name: "Woot!")
+      company = create(:company)
       contact = company.contacts.create!(name: "Ken", position: "HR", email: "hrep@woot.com")
       expect(contact).to respond_to(:company)
     end

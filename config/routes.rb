@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :jobs, only: [:show, :index] do
     resources :comments, only: [:create]
   end
+  get '/jobs' => 'jobs#jobs', as: 'jobs'
 end

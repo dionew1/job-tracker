@@ -23,7 +23,7 @@ describe Category do
 
   describe "relationships" do
     it "has many jobs" do
-      category = Category.new(title: "Quality")
+      category = create (:category)
       expect(category).to respond_to(:jobs)
     end
   end
