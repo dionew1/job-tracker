@@ -2,10 +2,9 @@ require 'rails_helper'
 
 describe "User creates a new comment" do
   scenario "a user can create comment" do
-    category = Category.create!(title: "Consulting")
-    company = Company.create!(name: "ESPN")
-    job = company.jobs.create!(title: "Developer", level_of_interest: 70,
-                                city: "Denver", category: category)
+    category = create(:category)
+    company = create(:company)
+    job = create(:job, category: category, company: company)
 
     visit company_job_path(company, job)
 
