@@ -15,4 +15,8 @@ class Job < ApplicationRecord
   def self.find_by_city(location)
     where(city: location)
   end
+
+  def self.group_by_interest
+    group(:level_of_interest).count
+  end
 end
